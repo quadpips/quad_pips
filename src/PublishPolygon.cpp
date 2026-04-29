@@ -1,4 +1,4 @@
-#include <mmp_quadruped/PolygonPublisher.h>
+#include <quad_pips/PolygonPublisher.h>
 
 using namespace mmp;
 

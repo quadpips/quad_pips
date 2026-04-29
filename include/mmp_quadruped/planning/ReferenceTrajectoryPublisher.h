@@ -1,5 +1,5 @@
-// #include <mmp_quadruped/MmpInterface.h>
-#include <mmp_quadruped/planning/ContactSequence.h>
+// #include <quad_pips/MmpInterface.h>
+#include <quad_pips/planning/ContactSequence.h>
 
 #include <ocs2_switched_model_interface/logic/ModeSequenceTemplate.h>
 #include <ocs2_switched_model_msgs/msg/scheduled_gait_sequence.h>

@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/ReferenceTrajectoryPublisher.h>
+#include <quad_pips/planning/ReferenceTrajectoryPublisher.h>
 
 
 namespace mmp {

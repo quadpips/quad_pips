@@ -1,4 +1,4 @@
-#include <mmp_quadruped/TerrainPublisher.h>
+#include <quad_pips/TerrainPublisher.h>
 
 namespace mmp {
 

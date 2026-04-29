@@ -18,7 +18,7 @@ def generate_launch_description():
     env_prefix = "perceptive/sparse_stones"
 
     go2_description_path = get_package_share_directory("go2_description")
-    mmp_quadruped_path = get_package_share_directory("mmp_quadruped")
+    quad_pips_path = get_package_share_directory("quad_pips")
     go2_interface_path = get_package_share_directory("go2_interface")
 
     ####################

@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/TorsoPathPlanner.h>
+#include <quad_pips/planning/TorsoPathPlanner.h>
 
 
 namespace mmp {

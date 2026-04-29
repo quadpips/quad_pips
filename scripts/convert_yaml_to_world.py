@@ -164,8 +164,8 @@ def generate_world(file_name, models_data, mu):
     # Print or save the modified content as needed
     # output_file_path = "./" + file_name + ".world"
 
-    # path = rospack.get_path("mmp_quadruped")
-    path = "/home/masselmeier3/ros2_ws/src/mmp_quadruped/"
+    # path = rospack.get_path("quad_pips")
+    path = "/home/masselmeier3/ros2_ws/src/quad_pips/"
 
     output_file_path = os.path.join(path, "worlds/perceptive/", file_name + ".world")
 
@@ -285,8 +285,8 @@ def generate_stones_json(file_name, models_data):
     json_object = json.dumps(stone_json, indent=4)
 
     # Writing to sample.json
-    path = "/home/masselmeier3/ros2_ws/src/mmp_quadruped/" 
-    # rospack.get_path("mmp_quadruped")
+    path = "/home/masselmeier3/ros2_ws/src/quad_pips/" 
+    # rospack.get_path("quad_pips")
     
 
     filepath = os.path.join(path, "config/environment/perceptive/", file_name + ".json")
@@ -306,8 +306,8 @@ if __name__ == '__main__':
     filename = args.filename
     mu = args.friction_coefficient
 
-    # path = rospack.get_path("mmp_quadruped")
-    path = "/home/masselmeier3/ros2_ws/src/mmp_quadruped/"
+    # path = rospack.get_path("quad_pips")
+    path = "/home/masselmeier3/ros2_ws/src/quad_pips/"
 
     # file_name = args.env
     with open(path + "/worlds/perceptive/" + filename + ".yaml", "r") as yaml_file:

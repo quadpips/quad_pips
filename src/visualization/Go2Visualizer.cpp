@@ -2,7 +2,7 @@
 // Created by rgrandia on 13.02.19.
 //
 
-#include "mmp_quadruped/visualization/Go2Visualizer.h"
+#include "quad_pips/visualization/Go2Visualizer.h"
 
 #include <ocs2_ros_interfaces/visualization/VisualizationHelpers.h>
 

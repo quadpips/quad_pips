@@ -1,12 +1,12 @@
 #pragma once
-#include <mmp_quadruped/planning/Graph.h>
+#include <quad_pips/planning/Graph.h>
 
-// #include <mmp_quadruped/MmpInterface.h>
+// #include <quad_pips/MmpInterface.h>
 #include <ocs2_custom_quadruped_interface/CustomQuadrupedInterface.h>
 
 // #include <convex_plane_decomposition_msgs/PlanarTerrain.h>
 
-#include <mmp_quadruped/MmpDimensions.h>
+#include <quad_pips/MmpDimensions.h>
 
 #include <random>
 

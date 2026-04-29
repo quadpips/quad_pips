@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/GraphSearcher.h>
+#include <quad_pips/planning/GraphSearcher.h>
 
 
 namespace mmp {

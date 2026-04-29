@@ -10,7 +10,7 @@
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <visualization_msgs/msg/marker.hpp>
 
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/utils.h>
 
 #include <convex_plane_decomposition/PlanarRegion.h>
 #include <convex_plane_decomposition/PolygonTypes.h>

@@ -17,7 +17,7 @@
 #include <Eigen/Geometry>
 
 // #include <ocs2_quadruped/common/Types.h>
-// #include <mmp_quadruped/MmpDimensions.h>
+// #include <quad_pips/MmpDimensions.h>
 #include <ocs2_robotic_tools/common/RotationTransforms.h>
 #include <convex_plane_decomposition/PlanarRegion.h>
 

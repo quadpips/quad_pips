@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/Superquadric.h>
+#include <quad_pips/planning/Superquadric.h>
 
 
 namespace mmp {

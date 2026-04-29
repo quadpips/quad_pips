@@ -1,7 +1,7 @@
 #pragma once
 
-#include <mmp_quadruped/planning/ModeFamily.h>
-#include <mmp_quadruped/planning/TorsoPathPlanner.h>
+#include <quad_pips/planning/ModeFamily.h>
+#include <quad_pips/planning/TorsoPathPlanner.h>
 
 #include <ocs2_oc/oc_data/PrimalSolution.h>
 

@@ -17,7 +17,7 @@
 #include <ocs2_msgs/msg/mpc_observation.hpp>
 #include "ocs2_mpc/SystemObservation.h"
 
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/utils.h>
 
 
 namespace mmp {

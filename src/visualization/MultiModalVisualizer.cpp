@@ -4,7 +4,7 @@
 #include "pinocchio/algorithm/kinematics.hpp"
 #include "pinocchio/algorithm/model.hpp"
 
-#include <mmp_quadruped/visualization/MultiModalVisualizer.h>
+#include <quad_pips/visualization/MultiModalVisualizer.h>
 
 
 namespace mmp {

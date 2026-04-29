@@ -1,15 +1,15 @@
 #pragma once
 
-// #include <mmp_quadruped/environment/SteppableRegion.h>
+// #include <quad_pips/environment/SteppableRegion.h>
 
 // #include <convex_plane_decomposition/PlanarRegion.h>
 
-#include <mmp_quadruped/planning/ContactSequence.h>
-#include <mmp_quadruped/planning/ModeFamilyNode.h>
-#include <mmp_quadruped/planning/ModeFamilyNodeID.h>
-#include <mmp_quadruped/planning/Superquadric.h>
-#include <mmp_quadruped/planning/TorsoPathPlanner.h>
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/ContactSequence.h>
+#include <quad_pips/planning/ModeFamilyNode.h>
+#include <quad_pips/planning/ModeFamilyNodeID.h>
+#include <quad_pips/planning/Superquadric.h>
+#include <quad_pips/planning/TorsoPathPlanner.h>
+#include <quad_pips/planning/utils.h>
 
 #include <map>
 #include <chrono>

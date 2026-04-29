@@ -5,10 +5,10 @@
 
 #include <ocs2_custom_quadruped_interface/CustomQuadrupedInterface.h>
 
-#include <mmp_quadruped/planning/ModeFamilyNode.h>
-#include <mmp_quadruped/planning/TorsoStateNode.h>
-#include <mmp_quadruped/planning/Superquadric.h>
-#include <mmp_quadruped/visualization/Go2Visualizer.h>
+#include <quad_pips/planning/ModeFamilyNode.h>
+#include <quad_pips/planning/TorsoStateNode.h>
+#include <quad_pips/planning/Superquadric.h>
+#include <quad_pips/visualization/Go2Visualizer.h>
 
 // #include "ocs2_quadruped/constraint/EndEffectorLinearConstraint.h"
 

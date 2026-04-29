@@ -6,7 +6,7 @@
 #include <Eigen/Geometry>
 #include <ocs2_switched_model_interface/core/SwitchedModel.h>
 
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/utils.h>
 
 namespace mmp {
 

@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <ocs2_core/misc/LoadData.h>
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/utils.h>
 
 
 namespace mmp {

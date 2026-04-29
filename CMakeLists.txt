@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(mmp_quadruped)
+project(quad_pips)
 
 # Cpp standard version
 set(CMAKE_CXX_STANDARD 17)

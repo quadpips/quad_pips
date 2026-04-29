@@ -18,24 +18,24 @@ def generate_launch_description():
     env_prefix = "perceptive/empty"
 
     go2_description_path = get_package_share_directory("go2_description")
-    mmp_quadruped_path = get_package_share_directory("mmp_quadruped")
+    quad_pips_path = get_package_share_directory("quad_pips")
 
     ####################
     # Launch Arguments #
     ####################
-    hyperparametersFile = os.path.join(mmp_quadruped_path, "config/planning/hyperparameters.info")
+    hyperparametersFile = os.path.join(quad_pips_path, "config/planning/hyperparameters.info")
     
-    mmpSqpFile = os.path.join(mmp_quadruped_path, "config/mmp/sqp.info")
-    mmpTaskFile = os.path.join(mmp_quadruped_path, "config/mmp/task.info")
-    mmpFrameFile = os.path.join(mmp_quadruped_path, "config/frame_declaration.info")
+    mmpSqpFile = os.path.join(quad_pips_path, "config/mmp/sqp.info")
+    mmpTaskFile = os.path.join(quad_pips_path, "config/mmp/task.info")
+    mmpFrameFile = os.path.join(quad_pips_path, "config/frame_declaration.info")
     mmpUrdfFile = os.path.join(go2_description_path, "urdf/go2_payload.urdf")
 
-    dummyTaskFile = os.path.join(mmp_quadruped_path, "config/mmp/dummy_task.info")
-    dummyFrameFile = os.path.join(mmp_quadruped_path, "config/dummy_frame_declaration.info")
+    dummyTaskFile = os.path.join(quad_pips_path, "config/mmp/dummy_task.info")
+    dummyFrameFile = os.path.join(quad_pips_path, "config/dummy_frame_declaration.info")
     dummyUrdfFile = os.path.join(go2_description_path, "urdf/dummy.urdf")
 
-    envFile = os.path.join(mmp_quadruped_path, "config/environment/" + env_prefix + ".json")
-    gaitCommandFile = os.path.join(mmp_quadruped_path, "config/gait.info")
+    envFile = os.path.join(quad_pips_path, "config/environment/" + env_prefix + ".json")
+    gaitCommandFile = os.path.join(quad_pips_path, "config/gait.info")
 
     gait = "standing_trot" # "standing_trot", "standing_walk"
 
@@ -49,7 +49,7 @@ def generate_launch_description():
             "use_sim_time", default_value="true", description="Use simulation (Gazebo) clock if true"
         ),    
         launch_ros.actions.Node(
-            package="mmp_quadruped",
+            package="quad_pips",
             executable="go2_mmp",
             name="go2_mmp",
             output="screen",
@@ -86,7 +86,7 @@ def generate_launch_description():
             ]
         ),
         # launch_ros.actions.Node(
-        #     package="mmp_quadruped",
+        #     package="quad_pips",
         #     executable="terrain_publisher",
         #     name="terrain_publisher",
         #     output="screen",
@@ -98,7 +98,7 @@ def generate_launch_description():
         #     ]
         # ),
         # launch_ros.actions.Node(
-        #     package="mmp_quadruped",
+        #     package="quad_pips",
         #     executable="polygon_publisher",
         #     name="polygon_publisher",
         #     output="screen",

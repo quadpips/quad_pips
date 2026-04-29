@@ -38,8 +38,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // #include <grid_map_ros/GridMapRosConverter.hpp>
 
 #include <ocs2_go2_mpc/Go2Interface.h>
-#include <mmp_quadruped/visualization/MultiModalVisualizer.h>
-#include <mmp_quadruped/planning/MultiModalPlanner.h>
+#include <quad_pips/visualization/MultiModalVisualizer.h>
+#include <quad_pips/planning/MultiModalPlanner.h>
 
 // using namespace ocs2;
 // using namespace mmp;

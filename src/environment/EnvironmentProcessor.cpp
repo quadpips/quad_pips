@@ -1,4 +1,4 @@
-#include <mmp_quadruped/environment/EnvironmentProcessor.h>
+#include <quad_pips/environment/EnvironmentProcessor.h>
 
 
 namespace mmp {

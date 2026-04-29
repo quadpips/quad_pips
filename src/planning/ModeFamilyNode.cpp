@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/ModeFamilyNode.h>
+#include <quad_pips/planning/ModeFamilyNode.h>
 
 
 namespace mmp {

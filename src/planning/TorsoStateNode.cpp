@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/TorsoStateNode.h>
+#include <quad_pips/planning/TorsoStateNode.h>
 
 
 namespace mmp {

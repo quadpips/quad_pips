@@ -27,10 +27,10 @@ This package has been tested on Ubuntu 22.04 / ROS2 Humble.
 
 ## Building
 
-Now you can build the `mmp_quadruped` package. 
+Now you can build the `quad_pips` package. 
 
 ```
-MAKEFLAGS="-j 4" colcon build --symlink-install --executor sequential --mixin rel-with-deb-info --packages-up-to mmp_quadruped
+MAKEFLAGS="-j 4" colcon build --symlink-install --executor sequential --mixin rel-with-deb-info --packages-up-to quad_pips
 ```
 
 Building ocs2 can be quite computationally expensive, so `MAKEFLAGS="-j 4"` limits the number (4) of cores used during build, and `--executor sequential` makes sure packages are build sequentially, not in parallel. `--mixin rel-with-deb-info` builds the release version of the code, not the debugging version in order to get better performance, though this needs colcon mixin to be set up. Feel free to adjust these to your liking. I would also recommend that you export this alias into your bashrc so that you do not have to copy this in every time
@@ -39,7 +39,7 @@ Building ocs2 can be quite computationally expensive, so `MAKEFLAGS="-j 4"` limi
 echo "alias buildros2='cd ~/ros2_ws && MAKEFLAGS="-j 4" colcon build --symlink-install --executor sequential --mixin rel-with-deb-info --packages-up-to'" >> ~/.bashrc  
 ```
 ## Running
-First, decide on what environment you want to test in. Set this environment as `env_prefix` in `go2_gazebo/launch/gazebo_mmp.launch.py` AND as `env_prefix` in `mmp_quadruped/launch/online_perceptive_mmp_sim.launch.py`.
+First, decide on what environment you want to test in. Set this environment as `env_prefix` in `go2_gazebo/launch/gazebo_mmp.launch.py` AND as `env_prefix` in `quad_pips/launch/online_perceptive_mmp_sim.launch.py`.
 
 
 1. To run the planner in Gazebo, first launch gazebo and spawn the Go2:
@@ -65,7 +65,7 @@ First, decide on what environment you want to test in. Set this environment as `
 
 5. Finally, launch the planner:
     ```
-    ros2 launch mmp_quadruped online_perceptive_mmp_sim.launch.py
+    ros2 launch quad_pips online_perceptive_mmp_sim.launch.py
     ```
 
 6. To begin planning, set the framework into Control Mode 4:

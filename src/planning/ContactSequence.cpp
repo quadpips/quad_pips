@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/ContactSequence.h>
+#include <quad_pips/planning/ContactSequence.h>
 
 
 namespace mmp {

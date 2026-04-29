@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/utils.h>
 
 #include "ocs2_switched_model_interface/terrain/ConvexTerrain.h"
 

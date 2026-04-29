@@ -4,16 +4,16 @@
 
 #include <ament_index_cpp/get_package_share_directory.hpp>
 
-#include <mmp_quadruped/environment/EnvironmentProcessor.h>
+#include <quad_pips/environment/EnvironmentProcessor.h>
 
-#include <mmp_quadruped/planning/Graph.h>
-#include <mmp_quadruped/planning/ConstraintManager.h>
-#include <mmp_quadruped/planning/GraphSearcher.h>
-#include <mmp_quadruped/planning/GraphTraverser.h>
+#include <quad_pips/planning/Graph.h>
+#include <quad_pips/planning/ConstraintManager.h>
+#include <quad_pips/planning/GraphSearcher.h>
+#include <quad_pips/planning/GraphTraverser.h>
 
-#include <mmp_quadruped/planning/ReferenceTrajectoryPublisher.h>
-#include <mmp_quadruped/visualization/MultiModalVisualizer.h>
-#include <mmp_quadruped/planning/Superquadric.h>
+#include <quad_pips/planning/ReferenceTrajectoryPublisher.h>
+#include <quad_pips/visualization/MultiModalVisualizer.h>
+#include <quad_pips/planning/Superquadric.h>
 
 #include <ocs2_custom_quadruped_interface/CustomQuadrupedInterface.h>
 

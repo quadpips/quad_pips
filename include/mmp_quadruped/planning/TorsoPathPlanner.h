@@ -7,9 +7,9 @@
 #include <iostream>
 #include <vector>
 
-#include <mmp_quadruped/planning/TorsoHeap.h>
-#include <mmp_quadruped/planning/TorsoStateNode.h>
-#include <mmp_quadruped/planning/utils.h>
+#include <quad_pips/planning/TorsoHeap.h>
+#include <quad_pips/planning/TorsoStateNode.h>
+#include <quad_pips/planning/utils.h>
 
 #include <ocs2_core/misc/LoadData.h>
 

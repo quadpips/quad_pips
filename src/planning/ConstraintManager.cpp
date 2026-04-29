@@ -4,7 +4,7 @@
 // #include "pinocchio/algorithm/kinematics.hpp"
 // #include "pinocchio/algorithm/model.hpp"
 
-#include <mmp_quadruped/planning/ConstraintManager.h>
+#include <quad_pips/planning/ConstraintManager.h>
 
 namespace mmp {
 

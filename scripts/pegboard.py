@@ -131,7 +131,7 @@ def make_pegboard(args):
     env_yaml["models"] = stones
 
     filename = args.filename
-    filepath = os.path.join("/home/masselmeier3/ros2_ws/src/mmp_quadruped/worlds/perceptive/" + filename + ".yaml")
+    filepath = os.path.join("/home/masselmeier3/ros2_ws/src/quad_pips/worlds/perceptive/" + filename + ".yaml")
 
     with open(filepath, 'w') as yaml_file:
         yaml.dump(env_yaml, yaml_file, default_flow_style=False)

@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/GraphTraverser.h>
+#include <quad_pips/planning/GraphTraverser.h>
 
 
 namespace mmp {

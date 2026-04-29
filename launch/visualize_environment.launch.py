@@ -23,7 +23,7 @@ def generate_launch_description():
 
       declare_env_file = DeclareLaunchArgument("envFile",
             default_value=os.path.join(
-                  get_package_share_directory("mmp_quadruped"),
+                  get_package_share_directory("quad_pips"),
                   "config",
                   "environment",
                   "empty.json"
@@ -35,7 +35,7 @@ def generate_launch_description():
       ## Node ##
       ##########
       env_vis_node = Node(
-            package="mmp_quadruped",
+            package="quad_pips",
             executable="polygon_publisher",
             name="polygon_publisher",
             output="screen",

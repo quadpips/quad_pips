@@ -1,4 +1,4 @@
-#include <mmp_quadruped/planning/Graph.h>
+#include <quad_pips/planning/Graph.h>
 
 
 namespace mmp {

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <mmp_quadruped/planning/Graph.h>
-#include <mmp_quadruped/planning/Heap.h>
-#include <mmp_quadruped/planning/TorsoPathPlanner.h>
+#include <quad_pips/planning/Graph.h>
+#include <quad_pips/planning/Heap.h>
+#include <quad_pips/planning/TorsoPathPlanner.h>
 
 
 namespace mmp {

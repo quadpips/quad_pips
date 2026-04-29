@@ -1,10 +1,10 @@
 #pragma once
 
-#include <mmp_quadruped/planning/ConstraintManager.h>
+#include <quad_pips/planning/ConstraintManager.h>
 
-#include <mmp_quadruped/planning/Graph.h>
+#include <quad_pips/planning/Graph.h>
 
-#include <mmp_quadruped/planning/ExperienceStep.h>
+#include <quad_pips/planning/ExperienceStep.h>
 
 #include <ocs2_sqp/SqpSettings.h>
 #include <ocs2_sqp/SqpSolver.h>

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-#include <mmp_quadruped/planning/ContactSequence.h>
-#include <mmp_quadruped/planning/ModeFamilyNodeID.h>
+#include <quad_pips/planning/ContactSequence.h>
+#include <quad_pips/planning/ModeFamilyNodeID.h>
 
 #include "ocs2_switched_model_interface/terrain/ConvexTerrain.h"
 
