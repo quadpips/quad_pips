@@ -6,7 +6,7 @@
 #include <ocs2_oc/oc_data/PrimalSolution.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ModeFamilyNode****************************/
 class ModeFamilyNode
@@ -436,4 +436,4 @@ class ModeFamilyNode
         base_coordinate_t refTorsoPose; /** The reference torso pose for the node */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

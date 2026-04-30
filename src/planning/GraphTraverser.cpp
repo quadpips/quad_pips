@@ -1,7 +1,7 @@
 #include <quad_pips/planning/GraphTraverser.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 GraphTraverser::GraphTraverser(const rclcpp::Node::SharedPtr& node,
                                 ConstraintManager * cm, 
@@ -654,5 +654,5 @@ void GraphTraverser::clearTrajectories()
     refinedGaitSequence_.clear();
 }
 
-}  // namespace mmp
+}  // namespace quadpips
 

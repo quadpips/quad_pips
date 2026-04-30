@@ -1,7 +1,7 @@
 #include <quad_pips/PolygonPublisher.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 PolygonPublisher::PolygonPublisher(const rclcpp::Node::SharedPtr& node, 
                                     const std::string & jsonFile)
@@ -189,4 +189,4 @@ visualization_msgs::msg::MarkerArray PolygonPublisher::generateSteppingStoneArra
   return stoneMarkerArray;
 }
 
-}  // namespace mmp
+}  // namespace quadpips

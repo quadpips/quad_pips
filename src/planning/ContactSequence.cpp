@@ -1,7 +1,7 @@
 #include <quad_pips/planning/ContactSequence.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ContactSequence****************************/
 ContactSequence::ContactSequence(const std::string & gaitCommandFile, const std::string & gait)
@@ -171,4 +171,4 @@ bool ContactSequence::isLegInSwing(const short & legIdx, const short & swingPhas
 }
 
 
-}  // namespace mmp
+}  // namespace quadpips

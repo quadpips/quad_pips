@@ -1,7 +1,7 @@
 #include <quad_pips/planning/ReferenceTrajectoryPublisher.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 ReferenceTrajectoryPublisher::ReferenceTrajectoryPublisher(const rclcpp::Node::SharedPtr& node,
                                                             const std::string & mpc_topic_prefix,
@@ -379,4 +379,4 @@ bool ReferenceTrajectoryPublisher::isTrackingDoneStateBased()
     return (nearGoal && stable);
 }
 
-}  // namespace mmp
+}  // namespace quadpips

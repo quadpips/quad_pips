@@ -12,7 +12,7 @@
 
 #include <ocs2_custom_quadruped_interface/CustomQuadrupedInterface.h>
 
-namespace mmp {
+namespace quadpips {
 
 class EnvironmentProcessor
 {
@@ -108,4 +108,4 @@ class EnvironmentProcessor
         std::string envFile_; /**< Path to environment file */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

@@ -5,7 +5,7 @@
 #include <quad_pips/planning/TorsoPathPlanner.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************GraphSearcher****************************/
 class GraphSearcher
@@ -50,5 +50,5 @@ class GraphSearcher
         double maxSearchTime_ = 1.0; /**< maximum time allowed for the graph search */
 };
 
-}  // namespace mmp
+}  // namespace quadpips
  

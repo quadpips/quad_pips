@@ -1,7 +1,7 @@
 #include <quad_pips/planning/ModeFamilyNode.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 struct ExperienceStep
 {
@@ -134,4 +134,4 @@ struct ExperienceStep
         ocs2::PrimalSolution solution_; /**< primal solution */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

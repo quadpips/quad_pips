@@ -1,7 +1,7 @@
 #include <quad_pips/planning/TorsoStateNode.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 
 /********* TorsoTransition ********/
@@ -130,4 +130,4 @@ std::string TorsoStateNode::description()
     return desc;
 }
 
-}  // namespace mmp
+}  // namespace quadpips

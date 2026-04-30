@@ -14,7 +14,7 @@
 #include "ocs2_switched_model_interface/logic/GaitSwitching.h"
 #include <ocs2_core/reference/ModeSchedule.h>
 
-namespace mmp {
+namespace quadpips {
 
 class GraphTraverser
 {
@@ -308,7 +308,7 @@ class GraphTraverser
         GaitSchedule::GaitSequence refinedGaitSequence_; /**< refined gait sequence after TO refinement */
 };
 
-}  // namespace mmp
+}  // namespace quadpips
 
 
 // #endif

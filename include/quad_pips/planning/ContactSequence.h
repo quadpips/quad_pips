@@ -5,7 +5,7 @@
 #include <quad_pips/planning/utils.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ContactSequence****************************/
 class ContactSequence
@@ -136,4 +136,4 @@ class ContactSequence
         double stanceTime = -1.0; /** stance time of gait, assuming constant across gait right now */        
 };
 
-}  // namespace mmp
+}  // namespace quadpips

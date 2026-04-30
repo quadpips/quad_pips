@@ -42,10 +42,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <quad_pips/planning/MultiModalPlanner.h>
 
 // using namespace ocs2;
-// using namespace mmp;
+// using namespace quadpips;
 
 using namespace switched_model;
-using namespace mmp;
+using namespace quadpips;
 
 int main(int argc, char** argv) 
 {

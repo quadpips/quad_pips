@@ -1,7 +1,7 @@
 #include <quad_pips/planning/Superquadric.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 Superquadric::Superquadric(const rclcpp::Node::SharedPtr& node,
                             const int & leg_idx, 
@@ -319,5 +319,5 @@ bool Superquadric::isPointWithinSuperquadricWorldFrame(const base_coordinate_t &
     return (value <= 1.0);
 }
 
-}  // namespace mmp
+}  // namespace quadpips
  

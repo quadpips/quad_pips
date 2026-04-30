@@ -20,32 +20,32 @@
 #include "ocs2_switched_model_interface/core/MotionPhaseDefinition.h"
 #include "ocs2_switched_model_interface/core/Rotations.h"
 
-namespace mmp {
+namespace quadpips {
 
 void Go2Visualizer::launchVisualizerNode(const rclcpp::Node::SharedPtr& node, std::vector<std::string> jointNames, std::string baseName) 
 {
   node_ = node;
-  costDesiredBasePositionPublisher_ = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_mmp/desiredBaseTrajectory", 1);
-  costDesiredBasePosePublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_mmp/desiredPoseTrajectory", 1);
-  costDesiredBaseAngVelocityPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredAngVelTrajectory", 1);
-  costDesiredBaseVelocityPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredVelTrajectory", 1);
-  costDesiredFeetPositionPublishers_[0] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_mmp/desiredFeetTrajectory/LF", 1);
-  costDesiredFeetPositionPublishers_[1] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_mmp/desiredFeetTrajectory/RF", 1);
-  costDesiredFeetPositionPublishers_[2] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_mmp/desiredFeetTrajectory/LH", 1);
-  costDesiredFeetPositionPublishers_[3] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_mmp/desiredFeetTrajectory/RH", 1);
+  costDesiredBasePositionPublisher_ = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_quadpips/desiredBaseTrajectory", 1);
+  costDesiredBasePosePublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_quadpips/desiredPoseTrajectory", 1);
+  costDesiredBaseAngVelocityPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredAngVelTrajectory", 1);
+  costDesiredBaseVelocityPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredVelTrajectory", 1);
+  costDesiredFeetPositionPublishers_[0] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_quadpips/desiredFeetTrajectory/LF", 1);
+  costDesiredFeetPositionPublishers_[1] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_quadpips/desiredFeetTrajectory/RF", 1);
+  costDesiredFeetPositionPublishers_[2] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_quadpips/desiredFeetTrajectory/LH", 1);
+  costDesiredFeetPositionPublishers_[3] = node->create_publisher<visualization_msgs::msg::Marker>("/ocs2_go2_quadpips/desiredFeetTrajectory/RH", 1);
   costDesiredFeetVelocityPublishers_[0] =
-      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredFeetVelTrajectory/LF", 1);
+      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredFeetVelTrajectory/LF", 1);
   costDesiredFeetVelocityPublishers_[1] =
-      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredFeetVelTrajectory/RF", 1);
+      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredFeetVelTrajectory/RF", 1);
   costDesiredFeetVelocityPublishers_[2] =
-      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredFeetVelTrajectory/LH", 1);
+      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredFeetVelTrajectory/LH", 1);
   costDesiredFeetVelocityPublishers_[3] =
-      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/desiredFeetVelTrajectory/RH", 1);
-  stateOptimizedPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/optimizedStateTrajectory", 1);
-  stateOptimizedPosePublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_mmp/optimizedPoseTrajectory", 1);
-  currentStatePublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/currentState", 1);
-  currentFeetPosesPublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_mmp/currentFeetPoses", 1);
-  currentCollisionSpheresPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_mmp/currentCollisionSpheres", 1);
+      node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/desiredFeetVelTrajectory/RH", 1);
+  stateOptimizedPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/optimizedStateTrajectory", 1);
+  stateOptimizedPosePublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_quadpips/optimizedPoseTrajectory", 1);
+  currentStatePublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/currentState", 1);
+  currentFeetPosesPublisher_ = node->create_publisher<geometry_msgs::msg::PoseArray>("/ocs2_go2_quadpips/currentFeetPoses", 1);
+  currentCollisionSpheresPublisher_ = node->create_publisher<visualization_msgs::msg::MarkerArray>("/ocs2_go2_quadpips/currentCollisionSpheres", 1);
 
   customQuadrupedTfPublisher_.launchNode(node, std::move(jointNames), std::move(baseName));
 }
@@ -373,4 +373,4 @@ void Go2Visualizer::publishCollisionSpheres(rclcpp::Time timeStamp, const base_c
   currentCollisionSpheresPublisher_->publish(markerArray);
 }
 
-}  // namespace mmp
+}  // namespace quadpips

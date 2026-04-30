@@ -10,7 +10,7 @@
 // #include "segmented_planes_terrain_model/SegmentedPlanesTerrainModel.h"
 #include "ocs2_switched_model_interface/terrain/ConvexTerrain.h"
 
-namespace mmp {
+namespace quadpips {
 
 /****************************Superquadric****************************/
 class Superquadric
@@ -66,4 +66,4 @@ class Superquadric
         Eigen::Matrix4d rbtToSuperquadricFrame; /** Transformation matrix from robot frame to superquadric frame */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

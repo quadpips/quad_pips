@@ -1,6 +1,6 @@
 #include <quad_pips/TerrainPublisher.h>
 
-namespace mmp {
+namespace quadpips {
 
 TerrainPublisher::TerrainPublisher(const rclcpp::Node::SharedPtr& node, 
                                     const std::string & envFileString)
@@ -488,4 +488,4 @@ void TerrainPublisher::visualizePlanarRegionIDs(const std::unique_ptr<switched_m
 }
 
 
-}  // namespace mmp
+}  // namespace quadpips

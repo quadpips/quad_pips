@@ -30,7 +30,7 @@
 
 #include <geometry_msgs/msg/vector3_stamped.hpp>
 
-namespace mmp {
+namespace quadpips {
 
 class MultiModalPlanner
 {
@@ -182,4 +182,4 @@ class MultiModalPlanner
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips

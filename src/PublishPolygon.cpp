@@ -1,6 +1,6 @@
 #include <quad_pips/PolygonPublisher.h>
 
-using namespace mmp;
+using namespace quadpips;
 
 int main(int argc, char* argv[])
 {

@@ -2,7 +2,7 @@
 
 #include <unordered_map>
 
-namespace mmp {
+namespace quadpips {
 
 template <class T> class Heap
 {
@@ -537,7 +537,7 @@ template <class T> class Heap
         std::unordered_map<std::string, size_t> hash_table; /**< Hash table that takes in a unique node key and returns the value of the node's index in elems_ */
 };
 
-}  // namespace mmp
+}  // namespace quadpips
 
 
 // #endif

@@ -3,7 +3,7 @@
 #include <quad_pips/planning/utils.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 struct TorsoStateNode
 {
@@ -203,4 +203,4 @@ struct TorsoStateNode
         bool explored = false; /**< Whether the torso state node has been explored during search */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

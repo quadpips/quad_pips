@@ -1,7 +1,7 @@
 #include <quad_pips/planning/GraphSearcher.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /********************************GraphSearcher******************************/
 
@@ -315,4 +315,4 @@ ModeFamilyNode * GraphSearcher::ModeFamilySearch(Graph * graph, const short & co
     return currentNode;
 }
 
-}  // namespace mmp
+}  // namespace quadpips

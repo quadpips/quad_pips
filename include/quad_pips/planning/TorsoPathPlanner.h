@@ -15,7 +15,7 @@
 
 #include "ocs2_switched_model_interface/terrain/ConvexTerrain.h"
 
-namespace mmp {
+namespace quadpips {
 
 class TorsoPathPlanner
 {
@@ -92,4 +92,4 @@ class TorsoPathPlanner
 };
 
 
-}  // namespace mmp
+}  // namespace quadpips

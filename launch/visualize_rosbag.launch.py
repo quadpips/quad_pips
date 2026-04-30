@@ -54,7 +54,7 @@ def generate_launch_description():
             arguments=[
                 "-d",
                 os.path.join(
-                    go2_interface_path, "rviz", "go2_mmp.rviz",
+                    go2_interface_path, "rviz", "go2_quadpips.rviz",
                 )
             ],
             parameters=[

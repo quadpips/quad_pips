@@ -35,7 +35,7 @@
 
 #define TRANSITION_DISCR_FACTOR 2
 
-namespace mmp {
+namespace quadpips {
 
 using namespace switched_model;
 using quaternion_t = Eigen::Quaternion<scalar_t>;
@@ -417,4 +417,4 @@ inline void intToTuple(std::vector<short> & tuple,
     }    
 }
 
-}  // namespace mmp
+}  // namespace quadpips

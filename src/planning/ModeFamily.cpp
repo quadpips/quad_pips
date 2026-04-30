@@ -1,7 +1,7 @@
 #include <quad_pips/planning/ModeFamily.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ModeFamily****************************/
 ModeFamily::ModeFamily(const rclcpp::Node::SharedPtr& node,
@@ -316,4 +316,4 @@ std::string ModeFamily::description() const
     //                     ")}"; 
 }
 
-}  // namespace mmp
+}  // namespace quadpips

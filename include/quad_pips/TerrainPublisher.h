@@ -28,7 +28,7 @@
 #include "segmented_planes_terrain_model/SegmentedPlanesTerrainModel.h"
 #include "ocs2_switched_model_interface/terrain/TerrainPlane.h"
 
-namespace mmp {
+namespace quadpips {
 
 class TerrainPublisher
 {
@@ -73,4 +73,4 @@ class TerrainPublisher
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips

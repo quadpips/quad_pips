@@ -100,16 +100,16 @@ target_compile_options(${PROJECT_NAME} PUBLIC ${FLAGS})
 ## Declare a C++ executable
 
 # Multi-modal single-mode plan node
-add_executable(go2_mmp
+add_executable(quad_pips_node
         src/LeggedRobotMmpNode.cpp
 )
-ament_target_dependencies(go2_mmp
+ament_target_dependencies(quad_pips_node
 	${dependencies}
 )
-target_link_libraries(go2_mmp
+target_link_libraries(quad_pips_node
         ${PROJECT_NAME}
 )
-target_compile_options(go2_mmp PRIVATE ${OCS2_CXX_FLAGS})
+target_compile_options(quad_pips_node PRIVATE ${OCS2_CXX_FLAGS})
 
 
 # Publish the terrain for the environment
@@ -149,7 +149,7 @@ install(
 
 install(
   TARGETS 
-        go2_mmp
+        quad_pips_node
         terrain_publisher
         polygon_publisher
         DESTINATION lib/${PROJECT_NAME}
@@ -159,7 +159,7 @@ install(DIRECTORY include/
   DESTINATION include/${PROJECT_NAME}
 )
 
-install(DIRECTORY config launch rviz worlds
+install(DIRECTORY config launch worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 

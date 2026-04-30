@@ -6,7 +6,7 @@
 
 #include <quad_pips/planning/ConstraintManager.h>
 
-namespace mmp {
+namespace quadpips {
 
 ConstraintManager::ConstraintManager(const rclcpp::Node::SharedPtr& node,
                                         std::shared_ptr<switched_model::CustomQuadrupedInterface> & interface)
@@ -748,4 +748,4 @@ std::string ConstraintManager::descriptionPositions()
     return str;
 }
 
-}  // namespace mmp
+}  // namespace quadpips

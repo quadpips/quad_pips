@@ -15,7 +15,7 @@
 #include <chrono>
 
 
-namespace mmp {
+namespace quadpips {
 
 /****************************Graph****************************/
 class Graph
@@ -334,4 +334,4 @@ class Graph
         GraphConstructionParams params_;
 };
 
-}  // namespace mmp
+}  // namespace quadpips

@@ -1,7 +1,7 @@
 #include <quad_pips/planning/MultiModalPlanner.h>
 #include <quad_pips/planning/TorsoPathPlanner.h>
 
-namespace mmp {
+namespace quadpips {
 
 MultiModalPlanner::MultiModalPlanner(const rclcpp::Node::SharedPtr& node,
                                         std::shared_ptr<MultiModalVisualizer> & multiModalVisualizer, 
@@ -550,5 +550,5 @@ void MultiModalPlanner::clear()
     RCLCPP_INFO_STREAM(node_->get_logger(), "done clearing");
 }
 
-}  // namespace mmp
+}  // namespace quadpips
 

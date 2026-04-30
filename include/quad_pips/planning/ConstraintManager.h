@@ -14,7 +14,7 @@
 #include <Eigen/Geometry>
 
 
-namespace mmp {
+namespace quadpips {
 
 class ConstraintManager
 {
@@ -219,4 +219,4 @@ class ConstraintManager
         Eigen::MatrixXd J_total = Eigen::MatrixXd::Zero(12, 12); /**< Combined Jacobian for all legs */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

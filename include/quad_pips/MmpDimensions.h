@@ -8,7 +8,7 @@
 
 #include <ocs2_core/automatic_differentiation/CppAdInterface.h>
 
-namespace mmp {
+namespace quadpips {
 
 static constexpr size_t STATE_DIM = 24;
 static constexpr size_t CONFIG_DIM = 18;
@@ -28,4 +28,4 @@ template <typename T>
 using feet_array_t = std::array<T, 4>;
 using contact_flag_t = feet_array_t<bool>;
 
-}  // namespace mmp
+}  // namespace quadpips

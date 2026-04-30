@@ -1,7 +1,7 @@
 #include <quad_pips/environment/EnvironmentProcessor.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 EnvironmentProcessor::EnvironmentProcessor(const rclcpp::Node::SharedPtr& node,
                                             std::shared_ptr<switched_model::CustomQuadrupedInterface> & interface, 
@@ -187,4 +187,4 @@ void EnvironmentProcessor::updateMinMaxEnvPts(const vector3_t & pt)
     }
 }
 
-}  // namespace mmp
+}  // namespace quadpips

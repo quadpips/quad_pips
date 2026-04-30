@@ -6,7 +6,7 @@
 
 #include "ocs2_switched_model_interface/terrain/ConvexTerrain.h"
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ModeFamily****************************/
 class ModeFamily
@@ -293,4 +293,4 @@ class ModeFamily
 };
 
 
-}  // namespace mmp
+}  // namespace quadpips

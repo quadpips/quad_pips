@@ -1,7 +1,7 @@
 #include <quad_pips/planning/TorsoPathPlanner.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /********* TorsoPathPlanner ********/
 TorsoPathPlanner::TorsoPathPlanner(const rclcpp::Node::SharedPtr& node,
@@ -360,4 +360,4 @@ int TorsoPathPlanner::extractTorsoLocalWaypointPosition(const comkino_state_t & 
     return waypointIdx;
 }
 
-}  // namespace mmp
+}  // namespace quadpips

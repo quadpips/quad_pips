@@ -7,7 +7,7 @@
 #include <quad_pips/visualization/MultiModalVisualizer.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 MultiModalVisualizer::MultiModalVisualizer(const rclcpp::Node::SharedPtr &node, 
                                             std::shared_ptr<Go2Visualizer> & go2Visualizer)
@@ -1303,5 +1303,5 @@ void MultiModalVisualizer::visualizePath(const vector_array_t & state_trajectory
     }
 }
 
-}  // namespace mmp
+}  // namespace quadpips
 

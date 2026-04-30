@@ -20,7 +20,7 @@
 #include <quad_pips/planning/utils.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 class PolygonPublisher
 {
@@ -47,4 +47,4 @@ class PolygonPublisher
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips

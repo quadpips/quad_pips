@@ -1,6 +1,6 @@
 #pragma once
 
-namespace mmp {
+namespace quadpips {
 
 /****************************ModeFamilyNodeID****************************/
 struct ModeFamilyNodeID
@@ -178,4 +178,4 @@ struct ModeFamilyNodeID
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips

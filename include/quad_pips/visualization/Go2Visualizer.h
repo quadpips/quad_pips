@@ -19,7 +19,7 @@
 #include <geometry_msgs/msg/pose_array.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 
-namespace mmp {
+namespace quadpips {
 
 using namespace switched_model;
 
@@ -117,4 +117,4 @@ class Go2Visualizer : public ocs2::DummyObserver {
   scalar_t minPublishTimeDifference_;
 };
 
-}  // namespace mmp
+}  // namespace quadpips

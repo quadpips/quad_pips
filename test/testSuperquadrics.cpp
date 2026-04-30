@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-namespace mmp {
+namespace quadpips {
 
 TEST(SuperquadricTest, testSuperquadric)
 {

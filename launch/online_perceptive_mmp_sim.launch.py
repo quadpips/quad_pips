@@ -28,7 +28,7 @@ def generate_launch_description():
     mmpSqpFile = os.path.join(quad_pips_path, "config/mmp/sqp.info")
     mmpTaskFile = os.path.join(quad_pips_path, "config/mmp/task.info")
     mmpFrameFile = os.path.join(quad_pips_path, "config/frame_declaration.info")
-    mmpUrdfFile = os.path.join(go2_description_path, "urdf/go2_payload.urdf")
+    mmpUrdfFile = os.path.join(go2_description_path, "urdf/go2_description.urdf")
 
     dummyTaskFile = os.path.join(quad_pips_path, "config/mmp/dummy_task.info")
     dummyFrameFile = os.path.join(quad_pips_path, "config/dummy_frame_declaration.info")
@@ -50,8 +50,8 @@ def generate_launch_description():
         ),    
         launch_ros.actions.Node(
             package="quad_pips",
-            executable="go2_mmp",
-            name="go2_mmp",
+            executable="quad_pips_node",
+            name="quad_pips_node",
             output="screen",
             prefix="gnome-terminal --",
             parameters=[

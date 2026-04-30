@@ -17,7 +17,7 @@
 
 #include <geometry_msgs/msg/point.h>
 
-namespace mmp {
+namespace quadpips {
 
 class MultiModalVisualizer 
 {
@@ -102,4 +102,4 @@ class MultiModalVisualizer
         rclcpp::Node::SharedPtr node_; /**< The ROS node handle */
 };
 
-}  // namespace mmp
+}  // namespace quadpips

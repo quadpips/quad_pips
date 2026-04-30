@@ -1,7 +1,7 @@
 #include <quad_pips/planning/Graph.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /********************************Graph***********************************/
 Graph::Graph(const rclcpp::Node::SharedPtr& node,
@@ -1018,5 +1018,5 @@ void Graph::updateCurrentTransition()
     currentNode = currentTransition->getNodeTo();
 }
 
-}  // namespace mmp
+}  // namespace quadpips
  

@@ -8,7 +8,7 @@
 
 #include <quad_pips/planning/utils.h>
 
-namespace mmp {
+namespace quadpips {
 
 template <class T> class TorsoHeap
 {
@@ -396,5 +396,5 @@ template <class T> class TorsoHeap
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips
 

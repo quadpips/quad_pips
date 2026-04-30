@@ -20,7 +20,7 @@
 #include <chrono>
 
 
-namespace mmp {
+namespace quadpips {
 
 class ReferenceTrajectoryPublisher
 {
@@ -112,4 +112,4 @@ class ReferenceTrajectoryPublisher
 
 };
 
-}  // namespace mmp
+}  // namespace quadpips

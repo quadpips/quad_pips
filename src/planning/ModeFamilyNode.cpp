@@ -1,7 +1,7 @@
 #include <quad_pips/planning/ModeFamilyNode.h>
 
 
-namespace mmp {
+namespace quadpips {
 
 /*********************************ModeFamilyNode*****************************/
 ModeFamilyNode::Transition::Transition(ModeFamilyNode * nFrom, ModeFamilyNode * nTo, const std::vector<TorsoStateNode::TorsoTransition *> & torsoPath,
@@ -589,5 +589,5 @@ void ModeFamilyNode::addTransitionTo(ModeFamilyNode * nt, const std::vector<Tors
     trans.push_back(new Transition(this, nt, torsoPath, w_exp, w_euc, w_stance, w_step, w_torso));
 }
 
-}  // namespace mmp
+}  // namespace quadpips
  
