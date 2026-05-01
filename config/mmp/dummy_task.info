@@ -1,7 +1,7 @@
 model_settings
 {
   algorithm                     SQP
-  recompileLibraries            true
+  recompileLibraries            false
   robotName                     dummy
 
   analyticalInverseKinematics   true

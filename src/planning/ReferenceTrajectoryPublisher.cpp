@@ -61,10 +61,10 @@ std::pair<ocs2::TargetTrajectories, switched_model::GaitSchedule::GaitSequence> 
 
     ocs2::TargetTrajectories ref_trajectory;
 
-    RCLCPP_INFO_STREAM(node_->get_logger(), "reference trajectory: ");
+    // RCLCPP_INFO_STREAM(node_->get_logger(), "reference trajectory: ");
     for (int i = 0; i < time_trajectory.size(); i++)
     {
-        RCLCPP_INFO_STREAM(node_->get_logger(), "i: " << i);
+        // RCLCPP_INFO_STREAM(node_->get_logger(), "i: " << i);
 
         scalar_t t_orig = time_trajectory[i]; //.asDouble();
         // RCLCPP_INFO_STREAM(node_->get_logger(), "  t_orig: " << t_orig);
@@ -74,20 +74,20 @@ std::pair<ocs2::TargetTrajectories, switched_model::GaitSchedule::GaitSequence> 
             continue; // to avoid double counting end/beginning of subproblems
         }
         scalar_t t_aug = t_orig + running_time_horizon;
-        RCLCPP_INFO_STREAM(node_->get_logger(), "      t_aug: " << t_aug);
+        // RCLCPP_INFO_STREAM(node_->get_logger(), "      t_aug: " << t_aug);
 
         ref_trajectory.timeTrajectory.push_back(t_aug);
 
         comkino_state_t state(state_trajectory[i].size());
         for (int j = 0; j < state_trajectory[i].size(); j++)
             state[j] = state_trajectory[i][j]; // .asDouble();      
-        RCLCPP_INFO_STREAM(node_->get_logger(), "      state: " << state.transpose());
+        // RCLCPP_INFO_STREAM(node_->get_logger(), "      state: " << state.transpose());
         ref_trajectory.stateTrajectory.push_back(state);
 
         comkino_input_t input(input_trajectory[i].size());
         for (int j = 0; j < input_trajectory[i].size(); j++)
             input[j] = input_trajectory[i][j]; // .asDouble();
-        RCLCPP_INFO_STREAM(node_->get_logger(), "      input: " << input.transpose());
+        // RCLCPP_INFO_STREAM(node_->get_logger(), "      input: " << input.transpose());
         
         if (params_.include_inputs)
         {
@@ -111,8 +111,6 @@ std::pair<ocs2::TargetTrajectories, switched_model::GaitSchedule::GaitSequence> 
     stance.duration = 1.0;
     stance.eventPhases = {};
     stance.modeSequence = {MN::STANCE};
-
-    // std::string gait = "standing_trot";
 
     if (gait_ == "standing_trot")
     {
@@ -163,78 +161,78 @@ std::pair<ocs2::TargetTrajectories, switched_model::GaitSchedule::GaitSequence> 
         static_walk_second_half.eventPhases = {0.05, 0.45, 0.55, 0.95};
         static_walk_second_half.modeSequence = {MN::STANCE, MN::LF_RF_LH, MN::STANCE, MN::LF_LH_RH, MN::STANCE};                
 
-        RCLCPP_INFO_STREAM(node_->get_logger(), "mode_schedules: ");
+        // RCLCPP_INFO_STREAM(node_->get_logger(), "mode_schedules: ");
         for (int i = 1; i < mode_schedules.size(); i++)
         {
-            RCLCPP_INFO_STREAM(node_->get_logger(), "    " << mode_schedules[i]);
+            // RCLCPP_INFO_STREAM(node_->get_logger(), "    " << mode_schedules[i]);
 
             if (switched_model::string2ModeNumber(mode_schedules[i]) == MN::STANCE)
             {
                 if (switched_model::string2ModeNumber(mode_schedules[i - 1]) == MN::LF_LH_RH) // gone through entire cycle
                 {
-                    RCLCPP_INFO_STREAM(node_->get_logger(), "    adding full four steps");
+                    // RCLCPP_INFO_STREAM(node_->get_logger(), "    adding full four steps");
                     gaitSequence.push_back(static_walk_first_half);
                     gaitSequence.push_back(static_walk_second_half);
                 } else if (switched_model::string2ModeNumber(mode_schedules[i - 1]) == MN::LF_RF_LH && // gone through partial cycle and at end
                             i == mode_schedules.size() - 1)
                 {
-                    RCLCPP_INFO_STREAM(node_->get_logger(), "    adding three steps");
+                    // RCLCPP_INFO_STREAM(node_->get_logger(), "    adding three steps");
                     gaitSequence.push_back(static_walk_first_half);
                     gaitSequence.push_back(third_step);
                 } else if (switched_model::string2ModeNumber(mode_schedules[i - 1]) == MN::RF_LH_RH &&
                             i == mode_schedules.size() - 1)
                 {
-                    RCLCPP_INFO_STREAM(node_->get_logger(), "    adding two steps");
+                    // RCLCPP_INFO_STREAM(node_->get_logger(), "    adding two steps");
                     gaitSequence.push_back(static_walk_first_half);
                 } else if (switched_model::string2ModeNumber(mode_schedules[i - 1]) == MN::LF_RF_RH &&
                             i == mode_schedules.size() - 1)
                 {
-                    RCLCPP_INFO_STREAM(node_->get_logger(), "    adding one step");
+                    // RCLCPP_INFO_STREAM(node_->get_logger(), "    adding one step");
                     gaitSequence.push_back(first_step);
                 }
             }
         }
     }
 
-    for (size_t i = 0; i < ref_trajectory.timeTrajectory.size(); i++)
-    {
-        RCLCPP_INFO_STREAM(node_->get_logger(), "    Orig Ref Traj " << i);
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       time:" << ref_trajectory.timeTrajectory[i]);
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       state:");
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           torso orientation: " << ref_trajectory.stateTrajectory[i].segment(0, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           torso position:    " << ref_trajectory.stateTrajectory[i].segment(3, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           torso ang vel: " << ref_trajectory.stateTrajectory[i].segment(6, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           torso lin vel:    " << ref_trajectory.stateTrajectory[i].segment(9, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LF joints:       " << ref_trajectory.stateTrajectory[i].segment(12, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RF joints:       " << ref_trajectory.stateTrajectory[i].segment(15, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LH joints:       " << ref_trajectory.stateTrajectory[i].segment(18, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RH joints:       " << ref_trajectory.stateTrajectory[i].segment(21, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       input:");
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LF contact forces: " << ref_trajectory.inputTrajectory[i].segment(0, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RF contact forces: " << ref_trajectory.inputTrajectory[i].segment(3, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LH contact forces: " << ref_trajectory.inputTrajectory[i].segment(6, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RH contact forces: " << ref_trajectory.inputTrajectory[i].segment(9, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LF foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(12, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RF foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(15, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           LH foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(18, 3).transpose());
-        RCLCPP_INFO_STREAM(node_->get_logger(), "           RH foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(21, 3).transpose());
-    }
+    // for (size_t i = 0; i < ref_trajectory.timeTrajectory.size(); i++)
+    // {
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "    Orig Ref Traj " << i);
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       time:" << ref_trajectory.timeTrajectory[i]);
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       state:");
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           torso orientation: " << ref_trajectory.stateTrajectory[i].segment(0, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           torso position:    " << ref_trajectory.stateTrajectory[i].segment(3, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           torso ang vel: " << ref_trajectory.stateTrajectory[i].segment(6, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           torso lin vel:    " << ref_trajectory.stateTrajectory[i].segment(9, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LF joints:       " << ref_trajectory.stateTrajectory[i].segment(12, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RF joints:       " << ref_trajectory.stateTrajectory[i].segment(15, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LH joints:       " << ref_trajectory.stateTrajectory[i].segment(18, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RH joints:       " << ref_trajectory.stateTrajectory[i].segment(21, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       input:");
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LF contact forces: " << ref_trajectory.inputTrajectory[i].segment(0, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RF contact forces: " << ref_trajectory.inputTrajectory[i].segment(3, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LH contact forces: " << ref_trajectory.inputTrajectory[i].segment(6, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RH contact forces: " << ref_trajectory.inputTrajectory[i].segment(9, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LF foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(12, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RF foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(15, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           LH foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(18, 3).transpose());
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "           RH foot vel wrt base: " << ref_trajectory.inputTrajectory[i].segment(21, 3).transpose());
+    // }
 
-    for (size_t i = 0; i < gaitSequence.size(); i++)
-    {
-        RCLCPP_INFO_STREAM(node_->get_logger(), "    Gait " << i);
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       duration: " << gaitSequence[i].duration);
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       modeSequence: ");
-        for (size_t j = 0; j < gaitSequence[i].modeSequence.size(); j++)
-        {
-            RCLCPP_INFO_STREAM(node_->get_logger(), "           mode " << j << ": " << switched_model::modeNumber2String(gaitSequence[i].modeSequence[j]));
-        }
-        RCLCPP_INFO_STREAM(node_->get_logger(), "       eventPhases: ");
-        for (size_t j = 0; j < gaitSequence[i].eventPhases.size(); j++)
-        {
-            RCLCPP_INFO_STREAM(node_->get_logger(), "           " << gaitSequence[i].eventPhases[j]);
-        }
-    }
+    // for (size_t i = 0; i < gaitSequence.size(); i++)
+    // {
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "    Gait " << i);
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       duration: " << gaitSequence[i].duration);
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       modeSequence: ");
+    //     for (size_t j = 0; j < gaitSequence[i].modeSequence.size(); j++)
+    //     {
+    //         RCLCPP_INFO_STREAM(node_->get_logger(), "           mode " << j << ": " << switched_model::modeNumber2String(gaitSequence[i].modeSequence[j]));
+    //     }
+    //     RCLCPP_INFO_STREAM(node_->get_logger(), "       eventPhases: ");
+    //     for (size_t j = 0; j < gaitSequence[i].eventPhases.size(); j++)
+    //     {
+    //         RCLCPP_INFO_STREAM(node_->get_logger(), "           " << gaitSequence[i].eventPhases[j]);
+    //     }
+    // }
 
     // make last stance a bit longer to make sure we finish the swing
     // gaitSequence.at(gaitSequence.size() - 1).duration += 0.5;

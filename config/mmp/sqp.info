@@ -14,6 +14,6 @@ multiple_shooting
   useFeedbackPolicy                     false // true
   integratorType                        RK2
   alpha_min                             1e-5 // threshold for line search step size, default: 1e-4
-  nThreads                              3
+  nThreads                              1
   threadPriority                        50  
 }

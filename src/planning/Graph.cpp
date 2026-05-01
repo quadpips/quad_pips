@@ -190,7 +190,6 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                 if (superquadrics_.at(i)->isRegionWithinSuperquadricWorldFrame(nominalTorsoPose, regions_.at(j), false))
                 {
                     // RCLCPP_INFO_STREAM(node_->get_logger(), "        Region " << j << " is reachable for leg " << i);
-                    // reachableRegions.at(i).push_back(regions_.at(j));
                     reachableRegionIDs.at(i).push_back(j);
                 }
             }
@@ -263,8 +262,6 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                     // RCLCPP_INFO_STREAM(node_->get_logger(), "          BR_i: " << BR_i);
 
                     std::vector<vector3_t> nominalPositions(4);
-                    // std::vector<switched_model::ConvexTerrain> footRegions(4);
-                    // std::vector<int> footRegionIDs(4);
                     std::vector<int> loopRegionIDs = {FL_i, FR_i, BL_i, BR_i};
 
                     for (int i = 0; i < 4; i++)
@@ -272,23 +269,15 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                         if (swingFlags[i])
                         {
                             nominalPositions[i] = regions_[loopRegionIDs[i]].plane.positionInWorld;
-                            // footRegions[i] = regions_[loopRegionIDs[i]];
-                            // footRegionIDs[i] = loopRegionIDs[i];
                         } else
                         {
                             nominalPositions[i] = currentNode->modeFamily->getNominalPositionWorldFrame(i);
-                            // footRegions[i] = currentNode->modeFamily->getRegion(i);
-                            // footRegionIDs[i] = currentNode->modeFamily->getRegionID(i);
                         }
                     }
                     
                     bool unitTestPrint = false; // false; // 
 
                     regionsTorsoPose = getTorsoPose(nominalPositions, unitTestPrint);
-
-                    // double torsoPathDeviation = calculateTorsoPathDeviation(torsoPath, nominalTorsoPose, unitTestPrint);
-
-                    // bool isCloseEnough = true; // (torsoPathDeviation < 0.25);
 
                     bool stableStance = isStableStance(nominalPositions, regionsTorsoPose);
 
@@ -302,8 +291,6 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                     {
                         stableStanceCount++;
 
-                        // bool reachable = true; // isReachable(regionsTorsoPose, footRegions, unitTestPrint);
-
                         // if (unitTestPrint)
                         // {
                         //     RCLCPP_INFO_STREAM(node_->get_logger(), "          reachable: " << reachable);
@@ -313,7 +300,6 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                         // {
                         // reachableCount++;
 
-                        // passed_reachability = true;
                         // RCLCPP_INFO_STREAM(node_->get_logger(), "passed reachability check");
 
                         bool forward_facing = isForwardFacing(regionsTorsoPose);
@@ -336,8 +322,8 @@ void Graph::addNodesV2(ModeFamilyNode * currentNode,
                                 
                                 // RCLCPP_INFO_STREAM(node_->get_logger(), "not throwing out transition");
 
-                                // bool perStepForwardProgress = true; // makingPerStepForwardProgress(currentNode, nominalPositions);
-                                bool forwardProgress = makingForwardProgress(nominalTorsoPose, regionsTorsoPose);
+                                // disabling for now
+                                bool forwardProgress = true; // makingForwardProgress(nominalTorsoPose, regionsTorsoPose);
 
                                 if (forwardProgress)
                                 {

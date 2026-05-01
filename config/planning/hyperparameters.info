@@ -17,11 +17,7 @@ graph_construction
 
 graph_weights
 {
-    w_exp          0.0; Weight for experience term on edges in graph search (normal step: 2.5-7.5, max: 250 - 500 )
     w_euc          1.0; Weight for euclidean distance term on edges in graph search (depends on env size min: ~0.10, max: max env dimension, 4-5)
-    w_stance       0.0; Weight for stance deviation term on edges in graph search (min: ~0.05, mean: 0.5 - 1.5, max:  ~3.5)
-    w_torso        0.0; Weight for torso path deviation term on edges in graph search (depends on env size min: ~0.10, max: max env dimension, 4-5)
-    w_step         0.0; Weight for steppability term on edges in graph search (1 / 5 / 100 / 1000)
 }
 
 trials

@@ -1,4 +1,4 @@
-wbc_type          sqp ; sqp or hqp
+wbc_type          hqp ; sqp or hqp
 
 sqpWbc ; weighted QP
 {
@@ -64,8 +64,8 @@ hqpWbc ; Hierarchical QP
   frictionCoefficient     0.5
 
   ; Swing leg kp and kd (in cartesian space - ee tracking)
-  swingKp                 370.0
-  swingKd                 37.0
+  swingKp                 550.0
+  swingKd                 50.0
 
   ; Base position kp and kd 
   baseKp                  1.0
